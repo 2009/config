@@ -12,3 +12,7 @@ deps: urxvt-tabbedex
 ## awesome ##
 
     ln -s ~/configs/awesome ~/.config/awesome
+
+## git ##
+
+    ln -s ~/configs/gitconfig ~/.gitconfig
