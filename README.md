@@ -9,3 +9,6 @@ deps: urxvt-tabbedex
 
     ln -s ~/configs/Xdefaults ~/.Xdefaults
 
+## awesome ##
+
+    ln -s ~/configs/awesome ~/.config/awesome
