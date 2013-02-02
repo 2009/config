@@ -12,20 +12,28 @@
 
 deps: urxvt-tabbedex
 
-    ln -s ~/configs/Xdefaults ~/.Xdefaults
+    ln -s ~/config/Xdefaults ~/.Xdefaults
 
 ## awesome ##
 
-    ln -s ~/configs/awesome ~/.config/awesome
+    ln -s ~/config/awesome ~/.config/awesome
 
 ## git ##
 
-    ln -s ~/configs/gitconfig ~/.gitconfig
+    ln -s ~/config/gitconfig ~/.gitconfig
 
 ## zsh ##
 
 Set default shell to zsh, if needed:
     chsh -s /bin/zsh
 
-    ln -s ~/configs/zshrc ~/.zshrc
-    ln -s ~/configs/oh-my-zsh ~/.oh-my-zsh
+    ln -s ~/config/zshrc ~/.zshrc
+    ln -s ~/config/oh-my-zsh ~/.oh-my-zsh
+
+## vim ##
+
+    ln -s ~/config/vim ~/.vim
+    ln -s ~/config/vimrc ~/.vim
+
+Install vundle bundles:
+    vim +BundleInstall +qall
