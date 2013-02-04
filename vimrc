@@ -36,6 +36,20 @@
 
  syntax on
  set number
+
+ " Search options
+ set incsearch
+ set hlsearch
+ 
+ " Indent options
+ set tabstop=2
+ set shiftwidth=2
+ set shiftround
+ set expandtab
+ set autoindent
+
+ " Theme options
  set background=dark
  let g:solarized_termcolors=256
+ let base16colorspace=256
  colorscheme solarized
