@@ -37,7 +37,13 @@ plugins=(git vi-mode)
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-export PATH=/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/usr/bin/core_perl
+#export PATH=$PATH:/user/custom/path
+
+# RVM
+# Load rvm
+source ~/.rvm/scripts/rvm
+# Ignore --user-install in /etc/gemrc, this is Arch specific
+export rvm_ignore_gemrc_issues=1
 
 # Set keybindings
 bindkey -v
