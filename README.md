@@ -37,3 +37,12 @@ Set default shell to zsh, if needed:
 
 Install vundle bundles:
     vim +BundleInstall +qall
+
+# Addition Configuration #
+
+## Disable Caps Lock ##
+
+Used to disable caps lock.
+
+Add the following to .xinitrc:
+    setxkbmap -option caps:none
