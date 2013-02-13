@@ -124,6 +124,7 @@ mytextclock = awful.widget.textclock(" %a %b %d, %I:%M %p ")
 
 -- Create a wibox for each screen and add it
 mywibox = {}
+mywib = {}
 mypromptbox = {}
 mylayoutbox = {}
 mytaglist = {}
@@ -205,10 +206,18 @@ for s = 1, screen.count() do
     -- Now bring it all together (with the tasklist in the middle)
     local layout = wibox.layout.align.horizontal()
     layout:set_left(left_layout)
-    layout:set_middle(mytasklist[s])
     layout:set_right(right_layout)
 
     mywibox[s]:set_widget(layout)
+
+    -- Create bottom wibox
+    mywib[s] = awful.wibox({ position = "bottom", screen = s })
+
+    -- Widgets for bottom wibox
+    local bottom_layout = wibox.layout.fixed.horizontal()
+    bottom_layout:add(mytasklist[s])
+
+    mywib[s]:set_widget(bottom_layout)
 end
 -- }}}
 
