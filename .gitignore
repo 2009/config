@@ -1,2 +1,3 @@
 # Vim bundles (handled by vundle)
 vim/bundle
+vim/backups
