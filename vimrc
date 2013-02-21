@@ -18,6 +18,7 @@ Bundle 'tpope/vim-fugitive'
 Bundle 'kien/ctrlp.vim'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'tpope/vim-rails.git'
+Bundle 'millermedeiros/vim-statline'
 "Bundle 'Lokaltog/powerline'
 
 " vim-scripts repos
@@ -129,8 +130,12 @@ set sidescroll=1
 
 " ================ Theme ========================
 
+set t_Co=256
 set background=dark
 let g:solarized_termcolors=256
-let base16colorspace=256
+"let base16colorspace=256
 colorscheme solarized
 
+" ================ Statusline ========================
+
+set laststatus=2
