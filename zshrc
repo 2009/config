@@ -84,11 +84,12 @@ if [[ -n ${terminfo[smkx]} ]] && [[ -n ${terminfo[rmkx]} ]]; then
   zle -N zle-line-finish
 fi
 
-# Fix ls++ colors
+# Launch tmux when shell starts
 if [[ -z "$TMUX" ]]; then
-    tmux && exit
+  tmux && exit
 else
-    export TERM=rxvt-unicode
+  # Fixes ls++ filesize colors
+  export TERM=screen-256color
 fi
 
 alias ls="ls++"
