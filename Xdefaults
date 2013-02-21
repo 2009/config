@@ -55,17 +55,17 @@ URxvt.matcher.button: 1
 #URxvt.color3: #E1AA5D
 #URxvt.color11: #F39D21
 ! Blue
-#URxvt.color4: #3C98C7
-URxvt.color12: #298AC8
+URxvt.color4: #3C98C7
+URxvt.color12: #268bd2
 ! Magenta
-#URxvt.color5: #9B64FB
-#URxvt.color13: #8542FF
+URxvt.color5: #6C71C4
+URxvt.color13: #6C71C4
 ! Cyan
 #URxvt.color6: #6D878D
 #URxvt.color14: #42717B
 ! White
-#URxvt.color7: #dddddd
-#URxvt.color15: #dddddd
+URxvt.color7: #dddddd
+URxvt.color15: #dddddd
 
 ######### Set xterm settings
 
