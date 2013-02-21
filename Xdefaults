@@ -38,7 +38,7 @@ URxvt.url-launcher: /usr/bin/firefox
 URxvt.matcher.button: 1
 
 # Tabs (requires aur urxvt-tabbedex)
-URxvt.perl-ext-common:  default,tabbedex
+#URxvt.perl-ext-common:  default,tabbedex
 
 #URxvt.foreground: #D7D0C7
 #URxvt.background: #151515
@@ -66,3 +66,10 @@ URxvt.color12: #298AC8
 ! White
 #URxvt.color7: #dddddd
 #URxvt.color15: #dddddd
+
+######### Set xterm settings
+
+xterm*termName:  xterm-256color
+xterm*faceName: DejaVu Sans Mono:pixelsize=12
+xterm*foreground: White
+xterm*background: Black
