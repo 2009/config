@@ -83,3 +83,10 @@ if [[ -n ${terminfo[smkx]} ]] && [[ -n ${terminfo[rmkx]} ]]; then
   zle -N zle-line-init
   zle -N zle-line-finish
 fi
+
+alias ls="ls++"
+
+# Git alias
+alias gst="git status"
+alias ga="git add"
+alias gc="git commit"
