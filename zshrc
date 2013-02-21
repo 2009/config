@@ -84,6 +84,13 @@ if [[ -n ${terminfo[smkx]} ]] && [[ -n ${terminfo[rmkx]} ]]; then
   zle -N zle-line-finish
 fi
 
+# Fix ls++ colors
+if [[ -z "$TMUX" ]]; then
+    tmux && exit
+else
+    export TERM=rxvt-unicode
+fi
+
 alias ls="ls++"
 
 # Git alias
