@@ -30,6 +30,10 @@ Set default shell to zsh, if needed:
     ln -s ~/config/zshrc ~/.zshrc
     ln -s ~/config/oh-my-zsh ~/.oh-my-zsh
 
+## tmux ##
+
+    ln -s ~/config/tmux.conf ~/.tmux.conf
+
 ## vim ##
 
     ln -s ~/config/vim ~/.vim
@@ -37,6 +41,11 @@ Set default shell to zsh, if needed:
 
 Install vundle bundles:
     vim +BundleInstall +qall
+
+NOTE: Sparkup requires python2, you may need to modify the following line in sparkup.py:
+    #!/usr/bin/env python
+To:
+    #!/usr/bin/env python2
 
 # Addition Configuration #
 

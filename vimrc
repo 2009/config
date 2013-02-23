@@ -19,6 +19,7 @@ Bundle 'kien/ctrlp.vim'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'tpope/vim-rails.git'
 Bundle 'millermedeiros/vim-statline'
+Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
 "Bundle 'Lokaltog/powerline'
 
 " vim-scripts repos
