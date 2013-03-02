@@ -96,6 +96,8 @@ fi
   #tmux attach || tmux new; exit
 #fi
 
+export EDITOR=vim
+
 alias ls="ls++"
 
 # Git alias
