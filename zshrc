@@ -5,7 +5,7 @@ ZSH=$HOME/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="zenchi"
+ZSH_THEME="af-magic"
 
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
@@ -27,17 +27,20 @@ ZSH_THEME="zenchi"
 # DISABLE_AUTO_TITLE="true"
 
 # Uncomment following line if you want red dots to be displayed while waiting for completion
-# COMPLETION_WAITING_DOTS="true"
+COMPLETION_WAITING_DOTS="true"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git vi-mode)
+plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
 #export PATH=$PATH:/user/custom/path
+
+# Add node package manager to PATH
+export PATH=/usr/local/share/npm/bin:$PATH
 
 # RVM
 # Load rvm
@@ -45,8 +48,8 @@ source ~/.rvm/scripts/rvm
 # Ignore --user-install in /etc/gemrc, this is Arch specific
 export rvm_ignore_gemrc_issues=1
 
-# Set keybindings
-bindkey -v
+# Disable corrections
+unsetopt correct_all
 
 # create a zkbd compatible hash;
 # to add other keys to this hash, see: man 5 terminfo
