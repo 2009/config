@@ -10,8 +10,6 @@
 
 ## urxvt terminal ##
 
-deps: urxvt-tabbedex
-
     ln -s ~/config/Xdefaults ~/.Xdefaults
 
 ## awesome ##
