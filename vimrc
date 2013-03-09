@@ -4,7 +4,8 @@
 "
 " ,    - Leader
 " ;    - Substitute for :
-
+" jj   - Esc
+"
 " ,b   - LustyJuggler buffers
 " ,ev  - Open vimrc
 " ,sv  - Save and reload vimrc
@@ -75,6 +76,10 @@ let mapleader=","
 
 " Remove the need to hold shift
 nnoremap ; :
+
+" Maps for jj to act as Esc
+ino jj <esc>
+cno jj <c-c>
 
 " Clear search
 nmap <silent> <Leader>/ :nohlsearch<CR>
