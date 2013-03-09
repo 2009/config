@@ -1,4 +1,23 @@
-" ================ Vundle ====================
+" ==================================================
+" Shortcut Documentation
+" ==================================================
+"
+" ,    - Leader
+" ;    - Substitute for :
+
+" ,b   - LustyJuggler buffers
+" ,ev  - Open vimrc
+" ,sv  - Save and reload vimrc
+" ,/   - Clear search (:nohlsearch)
+"
+" <F2> - Toggle paste
+"
+" :w!! - Write read-only file with sudo
+
+
+" ==================================================
+" Vundle Bundles
+" ==================================================
 
 set nocompatible               " be iMproved
 filetype off                   " required!
@@ -18,12 +37,13 @@ Bundle 'tpope/vim-fugitive'
 Bundle 'kien/ctrlp.vim'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'tpope/vim-rails.git'
+Bundle 'scrooloose/nerdcommenter'
 Bundle 'millermedeiros/vim-statline'
 Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
-"Bundle 'Lokaltog/powerline'
 
 " vim-scripts repos
 Bundle 'UltiSnips'
+Bundle 'LustyJuggler'
 
 " non github repos
 "Bundle 'git://git.wincent.com/command-t.git'
@@ -39,10 +59,56 @@ filetype plugin indent on    " required!
 " see :h vundle for more details or wiki for FAQ
 " NOTE: comments after Bundle command are not allowed..
 
-" ================ Plugin Setup ========================
+" ==================================================
+" Plugin Setup
+" ==================================================
 
 " Ultisnips
 set runtimepath+=~/.vim/bundle/UltiSnips
+
+" ==================================================
+" Key Mappings
+" ==================================================
+
+" Change the mapleader from \ to ,
+let mapleader=","
+
+" Remove the need to hold shift
+nnoremap ; :
+
+" Clear search
+nmap <silent> <Leader>/ :nohlsearch<CR>
+
+" Remap LustyJuggler key
+nmap <silent> <Leader>b :LustyJuggler<CR>
+
+" Don't skip wrapped lines
+nnoremap j gj
+nnoremap k gk
+
+" Easy window navigation
+map <C-h> <C-w>h
+map <C-j> <C-w>j
+map <C-k> <C-w>k
+map <C-l> <C-w>l
+
+" Disable arrow key
+map <up> <nop>
+map <down> <nop>
+map <left> <nop>
+map <right> <nop>
+
+set pastetoggle=<F2>
+
+" ================ Write non-sudo files ==============
+
+" Allows saving files not opened with sudo
+cmap w!! w !sudo tee % >/dev/null
+
+" ================ Edit/Reload Vimrc =================
+
+nmap <silent> <leader>ev :e $MYVIMRC<CR>
+nmap <silent> <leader>sv :so $MYVIMRC<CR>
 
 " ================ General Config ====================
 
@@ -67,6 +133,9 @@ syntax on
 
 set incsearch "Find the next match as we type the search
 set hlsearch "Hilight searches by default
+set ignorecase "Ignore case when searching
+set smartcase " Ignore case if search pattern is all lowercase,
+              " case-sensitive otherwise
 set viminfo='100,f1 "Save up to 100 marks, enable capital marks
 
 " ================ Turn Off Swap Files ==============
