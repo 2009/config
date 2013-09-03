@@ -5,7 +5,7 @@ ZSH=$HOME/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="af-magic"
+ZSH_THEME="aussiegeek"
 
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
@@ -50,6 +50,10 @@ export rvm_ignore_gemrc_issues=1
 
 # Disable corrections
 unsetopt correct_all
+
+# Set vi keybindings
+# also enable command line editing in vim (<C-e><C-x>)
+bindkey -v
 
 # create a zkbd compatible hash;
 # to add other keys to this hash, see: man 5 terminfo
@@ -114,4 +118,7 @@ alias ys="yaourt -S $1"
 alias yss="yaourt -Ss $1"
 alias yqs="yaourt -Qs $1"
 alias yrm="yaourt -Rns $1"
+
+# Copy file text to clipboard
+alias clip="xclip -sel clip < $1"
 
