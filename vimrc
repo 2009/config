@@ -39,6 +39,7 @@ Bundle 'kien/ctrlp.vim'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'tpope/vim-rails.git'
 Bundle 'scrooloose/nerdcommenter'
+Bundle 'scrooloose/nerdtree'
 Bundle 'millermedeiros/vim-statline'
 Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
 
@@ -104,6 +105,9 @@ map <left> <nop>
 map <right> <nop>
 
 set pastetoggle=<F2>
+
+" NerdTree
+map <C-n> :NERDTreeToggle<CR>
 
 " ================ Write non-sudo files ==============
 
