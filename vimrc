@@ -68,6 +68,9 @@ filetype plugin indent on    " required!
 " Ultisnips
 set runtimepath+=~/.vim/bundle/UltiSnips
 
+" Ctrlp root markers
+let g:ctrlp_root_markers = ['.ctrlp']
+
 " ==================================================
 " Key Mappings
 " ==================================================
