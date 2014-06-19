@@ -42,6 +42,9 @@ source $ZSH/oh-my-zsh.sh
 # Add node package manager to PATH
 export PATH=/usr/local/share/npm/bin:$PATH
 
+# Fix for java font rendering in Arch Linux
+export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on'
+
 # RVM
 # Load rvm
 source ~/.rvm/scripts/rvm
