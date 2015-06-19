@@ -107,6 +107,7 @@ fi
 #fi
 
 export EDITOR=vim
+export BROWSER=firefox
 
 alias ls="ls++"
 
