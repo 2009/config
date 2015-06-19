@@ -16,6 +16,10 @@
 
     ln -s ~/config/awesome ~/.config/awesome
 
+## dwb ##
+
+    ln -s ~/config/dwb ~/.config/dwb
+
 ## git ##
 
     ln -s ~/config/gitconfig ~/.gitconfig
