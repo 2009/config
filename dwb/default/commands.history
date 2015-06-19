@@ -1,0 +1,8 @@
+set adblocker-filterlist /home/zenchi/.config/dwb/adblock_lists
+set adblocker true
+set adblock true
+adblock_reload_rules
+dwb:pl
+bd
+bp
+iron web browser
