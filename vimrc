@@ -42,7 +42,7 @@
 set nocompatible               " be iMproved, required!
 filetype off                   " required!
 
-set rtp+=~/.vim/bundle/vundle
+set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 " Vundle manages all the packages for Vim:
