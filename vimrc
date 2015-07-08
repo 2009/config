@@ -203,6 +203,7 @@ let g:ctrlp_root_markers = ['.ctrlp']
 
 " Ctrlp custom ignore
 let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git\|bower_components\|tmp\|dist'
+let g:ctrlp_show_hidden = 1
 
 " ==================================================
 " Key Mappings
