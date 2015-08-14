@@ -32,7 +32,7 @@ COMPLETION_WAITING_DOTS="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git)
+plugins=(git colored-man history)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -47,16 +47,16 @@ export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on'
 
 # RVM
 # Load rvm
-source ~/.rvm/scripts/rvm
+#source ~/.rvm/scripts/rvm
 # Ignore --user-install in /etc/gemrc, this is Arch specific
-export rvm_ignore_gemrc_issues=1
+#export rvm_ignore_gemrc_issues=1
 
 # Disable corrections
 unsetopt correct_all
 
 # Set vi keybindings
 # also enable command line editing in vim (<C-e><C-x>)
-bindkey -v
+#bindkey -v
 
 # create a zkbd compatible hash;
 # to add other keys to this hash, see: man 5 terminfo
@@ -95,12 +95,12 @@ if [[ -n ${terminfo[smkx]} ]] && [[ -n ${terminfo[rmkx]} ]]; then
 fi
 
 # Launch tmux when shell starts
-if [[ -z "$TMUX" && $TERM = "rxvt-unicode-256color" ]]; then
-  tmux && exit
-else
-  # Fixes ls++ filesize colors
-  export TERM=screen-256color
-fi
+#if [[ -z "$TMUX" && $TERM = "rxvt-unicode-256color" ]]; then
+#  tmux && exit
+#else
+#  # Fixes ls++ filesize colors
+#  export TERM=screen-256color
+#fi
 
 #if [ $TERM != "screen-256color" ] && [  $TERM != "screen" ]; then
   #tmux attach || tmux new; exit
@@ -109,7 +109,7 @@ fi
 export EDITOR=vim
 export BROWSER=firefox
 
-alias ls="ls++"
+#alias ls="ls++"
 
 # Git alias
 alias gst="git status"
@@ -126,3 +126,11 @@ alias yrm="yaourt -Rns $1"
 # Copy file text to clipboard
 alias clip="xclip -sel clip < $1"
 
+# Show ponysay fortune
+fortune -a $ZSH/plugins/chucknorris/fortunes all | ponysay
+
+# Colored output in termite (needs entry in .dircolors)
+eval $(dircolors ~/.dircolors)
+
+# Don't load global ranger config as we set all variables in config/ranger/rc.conf
+export RANGER_LOAD_DEFAULT_RC=FALSE
