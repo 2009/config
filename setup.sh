@@ -14,7 +14,7 @@ ln -s ~/config/oh-my-zsh ~/.oh-my-zsh
 ln -s ~/config/vim ~/.vim
 ln -s ~/config/vimrc ~/.vimrc
 ln -s ~/config/ranger ~/.config/ranger
-ln -s ~/config/dircolors ~/.config/dircolors
+ln -s ~/config/dircolors ~/.dircolors
 
 echo "Installing vim bundles"
 
