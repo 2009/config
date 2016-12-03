@@ -7,6 +7,7 @@ git submodule update
 
 echo "Creating link files"
 
+ln -s ~/config ~/.config
 ln -s ~/config/awesome ~/.config/awesome
 ln -s ~/config/gitconfig ~/.gitconfig
 ln -s ~/config/zshrc ~/.zshrc
