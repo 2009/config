@@ -16,6 +16,7 @@ ln -s ~/config/vim ~/.vim
 ln -s ~/config/vimrc ~/.vimrc
 ln -s ~/config/ranger ~/.config/ranger
 ln -s ~/config/dircolors ~/.dircolors
+ln -s ~/config/weechat ~/.weechat
 
 echo "Installing vim bundles"
 
