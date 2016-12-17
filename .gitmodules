@@ -3,7 +3,7 @@
 	url = git://github.com/robbyrussell/oh-my-zsh.git
 [submodule "awesome"]
 	path = awesome
-	url = git@github.com:2009/awesome-config.git
+	url = git://github.com/2009/awesome-config.git
 [submodule "vim/bundle/Vundle.vim"]
 	path = vim/bundle/Vundle.vim
 	url = https://github.com/gmarik/Vundle.vim.git
