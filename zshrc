@@ -94,18 +94,6 @@ if [[ -n ${terminfo[smkx]} ]] && [[ -n ${terminfo[rmkx]} ]]; then
   zle -N zle-line-finish
 fi
 
-# Launch tmux when shell starts
-#if [[ -z "$TMUX" && $TERM = "rxvt-unicode-256color" ]]; then
-#  tmux && exit
-#else
-#  # Fixes ls++ filesize colors
-#  export TERM=screen-256color
-#fi
-
-#if [ $TERM != "screen-256color" ] && [  $TERM != "screen" ]; then
-  #tmux attach || tmux new; exit
-#fi
-
 export EDITOR=vim
 export BROWSER=firefox
 

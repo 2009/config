@@ -365,8 +365,10 @@ au BufNewFile,BufRead *.ts set syn=javascript
 set t_Co=256 " Fix colors in terminal vim
 "set background=dark
 "let g:solarized_termcolors=256
-""let base16colorspace=256
+"let base16colorspace=256
 "colorscheme solarized
+
+"let g:spacegray_italicize_comments = 1
 colorscheme spacegray
 
 " Add a different color for the cursor line
