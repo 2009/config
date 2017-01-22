@@ -270,6 +270,7 @@ set history=1000 "Store lots of :cmdline history
 set showcmd "Show incomplete cmds down the bottom
 set showmode "Show current mode down the bottom
 set gcr=a:blinkon0 "Disable cursor blink
+set cursorline " Highlight the cursor line
 set visualbell "No sounds
 set autoread "Reload files changed outside vim
 
@@ -362,7 +363,7 @@ au BufNewFile,BufRead *.ts set syn=javascript
 
 " ================ Theme ========================
 
-set t_Co=256 " Fix colors in terminal vim
+"set t_Co=256 " Fix colors in terminal vim
 "set background=dark
 "let g:solarized_termcolors=256
 "let base16colorspace=256
@@ -378,3 +379,12 @@ hi CursorLine guibg=#000000 ctermbg=0 gui=none
 
 " ================ Statusbar ========================
 set laststatus=2 " Always show the status line
+let g:airline#extensions#tabline#enabled = 1 " Enable buffer line
+let g:airline_powerline_fonts = 1 " Enable powerline symbols
+
+" Customise vim-airline symbols
+if !exists('g:airline_symbols')
+  let g:airline_symbols = {}
+endif
+let g:airline_symbols.linenr = ''
+let g:airline_symbols.maxlinenr = ''
