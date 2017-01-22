@@ -117,8 +117,5 @@ alias clip="xclip -sel clip < $1"
 # Show ponysay fortune
 fortune -a $ZSH/plugins/chucknorris/fortunes all | ponysay
 
-# Colored output in termite (needs entry in .dircolors)
-eval $(dircolors ~/.dircolors)
-
 # Don't load global ranger config as we set all variables in config/ranger/rc.conf
 export RANGER_LOAD_DEFAULT_RC=FALSE
