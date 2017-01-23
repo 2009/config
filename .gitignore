@@ -8,3 +8,5 @@ ranger/*
 !ranger/commands.py
 pulse/*
 dconf/*
+weechat/logs
+*.log
