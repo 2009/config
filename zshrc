@@ -39,6 +39,9 @@ source $ZSH/oh-my-zsh.sh
 # Customize to your needs...
 #export PATH=$PATH:/user/custom/path
 
+# Add scripts to PATH
+export PATH=$HOME/bin:$PATH
+
 # Add node package manager to PATH
 export PATH=/usr/local/share/npm/bin:$PATH
 
