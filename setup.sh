@@ -2,22 +2,23 @@ cd $HOME/config
 
 echo "Fetching git submodules"
 
-git submodule init
-git submodule update
+git submodule update --init --recursive
 
 echo "Creating link files"
 
-ln -s ~/config ~/.config
-ln -s ~/config/awesome ~/.config/awesome
-ln -s ~/config/gitconfig ~/.gitconfig
-ln -s ~/config/zshrc ~/.zshrc
-ln -s ~/config/oh-my-zsh ~/.oh-my-zsh
-ln -s ~/config/vim ~/.vim
-ln -s ~/config/vimrc ~/.vimrc
-ln -s ~/config/ranger ~/.config/ranger
-ln -s ~/config/dircolors ~/.dircolors
-ln -s ~/config/weechat ~/.weechat
+[ -d $HOME/.config ] || mkdir $HOME/.config
+
+ln -sn $HOME/config/termite   $HOME/.config/termite
+ln -sn $HOME/config/awesome   $HOME/.config/awesome
+ln -sn $HOME/config/gitconfig $HOME/.gitconfig
+ln -sn $HOME/config/zshrc     $HOME/.zshrc
+ln -sn $HOME/config/oh-my-zsh $HOME/.oh-my-zsh
+ln -sn $HOME/config/vim       $HOME/.vim
+ln -sn $HOME/config/vimrc     $HOME/.vimrc
+ln -sn $HOME/config/ranger    $HOME/.config/ranger
+ln -sn $HOME/config/dircolors $HOME/.dircolors
+ln -sn $HOME/config/weechat   $HOME/.weechat
 
 echo "Installing vim bundles"
 
-vim +PluginInstall +qall
+vim -e +PluginInstall +qall
