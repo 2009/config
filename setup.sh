@@ -8,6 +8,7 @@ echo "Creating link files"
 
 [ -d $HOME/.config ] || mkdir $HOME/.config
 
+ln -sn $HOME/config/termite   $HOME/.config/termite
 ln -sn $HOME/config/awesome   $HOME/.config/awesome
 ln -sn $HOME/config/gitconfig $HOME/.gitconfig
 ln -sn $HOME/config/zshrc     $HOME/.zshrc
