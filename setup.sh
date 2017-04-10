@@ -2,8 +2,7 @@ cd $HOME/config
 
 echo "Fetching git submodules"
 
-git submodule init
-git submodule update
+git submodule update --init --recursive
 
 echo "Creating link files"
 
