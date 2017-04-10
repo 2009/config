@@ -20,4 +20,4 @@ ln -sn $HOME/config/weechat   $HOME/.weechat
 
 echo "Installing vim bundles"
 
-vim +PluginInstall +qall
+vim -e +PluginInstall +qall
