@@ -6,5 +6,5 @@ ranger/*
 !ranger/movie2dir.sh
 !ranger/rc.conf
 !ranger/commands.py
-pulse/*
-dconf/*
+weechat/logs
+*.log

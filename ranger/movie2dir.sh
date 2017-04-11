@@ -26,11 +26,14 @@ for dir in "$@"; do
     mkdir -vp "$tmpdir"
     touch "$logfile"
 
+    # Set case insensitive matching
+    shopt -s nocasematch
+
     # Loop through directory files
     while read -d $'\0' -r f; do
 
       # Rename video and subtitles and move anything else to tmp
-      if [[ ! $f =~ \.(mp4|avi|mkv|srt)$ ]]; then
+      if [[ $f =~ sample ]] || [[ ! $f =~ \.(mp4|avi|mkv|srt|sub)(\.~[0-9]~)?$ ]]; then
 
         # Move to tmp folder
         mv -v "$f" "$tmpdir"

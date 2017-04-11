@@ -93,16 +93,17 @@ class movie2dir(Command):
         self.fm.notify("Done!")
 
 
-class movieAutoName(Command):
-    """:movieAutoName
+class movieautoname(Command):
+    """:movieautoname
 
     Renames folder automatically based on title.
     """
 
-    quality_attributes = ["1080p", "720p", "480p", "xvid", "1080i", "1080"]
+    quality_attributes = ["1080p", "1080", "720p", "720", "480p", "480", "xvid", "1080i"]
     format_string = "%t (%y)"
 
     def execute(self):
+        test_mode = self.arg(1) == '-t' and True or False
 
         selection = self.fm.thistab.get_selection()
         if len(selection) == 0: return
@@ -119,7 +120,9 @@ class movieAutoName(Command):
                     new_name = self.format_name(fields, self.format_string)
 
                     # Rename the directory to the new name
-                    if f.is_directory:
+                    if test_mode:
+                        self.fm.notify(new_name+' :: done!')
+                    elif f.is_directory:
                         if self.fm.rename(f, new_name):
                             self.fm.notify(new_name+' :: done!')
                         else:
@@ -156,30 +159,21 @@ class movieAutoName(Command):
         }
 
         filename = filename.lower()
-        elems = re.split('[\[\] _.-]', filename) 
+        elems = re.split('[\[\]\(\) _.-]', filename) 
 
         # parse each filename element except the extension
         for idx, elem in enumerate(elems):
 
-            # Check that the element is long enough to contain episode & season info
-            if len(elem) > 2:
-
-                # sanitize brackets
-                if elem[0] == '[': 
-                    closeindex = elem.rfind(']')
-                    elem       = elem[1:closeindex if closeindex != -1 else len(elem)]
-                    elems[idx] = elem
-                elif elem[0] == '(':
-                    closeindex = elem.rfind(')')
-                    elem       = elem[1:closeindex if closeindex != -1 else len(elem)]
-                    elems[idx] = elem
+            # ignore quality and year check for the first element, this should
+            # always be part of the title
+            if idx > 0:
 
                 # found quality
                 if elem in self.quality_attributes:
                     fields['quality'] = elem
 
                 # found a year
-                if elem[0:2] in ["19", "20"] and elem[2:4].isdigit():
+                if len(elem) == 4 and elem[0:2] in ["19", "20"] and elem[2:4].isdigit():
                     fields['year'] = elem
 
                     # Everything after the year is considered extra
@@ -192,17 +186,17 @@ class movieAutoName(Command):
                     return fields
 
             # Determined this element to be part of the title so add it
-            if elem not in fields['extra'] and len(elem) > 0:
+            if len(elem) > 0 and elem not in fields['extra'] and elem != fields['quality']:
                 fields['title'].append(elem)
 
         return fields
 
     def titlize(self, title):
+        """ Joins a string array and emulates titlecase returning the str result """
 
         # Word not to capitalize
         SMALL = ['a', 'an', 'and', 'as', 'at', 'but', 'by', 'for', 'if', 'in', 'of', 'on', 'or', 'to', 'v', 'via', 'vs', 'with']
 
-        """ Joins a string array and emulates titlecase returning the str result """
         result = ""
         if len(title) > 0: # First word always capital
             if title[0] == "its":
