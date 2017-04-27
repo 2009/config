@@ -24,7 +24,7 @@ ZSH_THEME="aussiegeek"
 # DISABLE_LS_COLORS="true"
 
 # Uncomment following line if you want to disable autosetting terminal title.
-# DISABLE_AUTO_TITLE="true"
+DISABLE_AUTO_TITLE="true"
 
 # Uncomment following line if you want red dots to be displayed while waiting for completion
 COMPLETION_WAITING_DOTS="true"
@@ -50,7 +50,7 @@ export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on'
 
 # RVM
 # Load rvm
-#source ~/.rvm/scripts/rvm
+source ~/.rvm/scripts/rvm
 # Ignore --user-install in /etc/gemrc, this is Arch specific
 #export rvm_ignore_gemrc_issues=1
 
@@ -122,3 +122,9 @@ fortune -a $ZSH/plugins/chucknorris/fortunes all | ponysay
 
 # Don't load global ranger config as we set all variables in config/ranger/rc.conf
 export RANGER_LOAD_DEFAULT_RC=FALSE
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
+
+# Load plugin to fix terminal titles for commands used with job control
+source $HOME/config/zsh/terminal-title.zsh
