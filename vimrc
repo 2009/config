@@ -169,6 +169,17 @@ Plugin 'SirVer/ultisnips'
 " Snippets are separated from the engine. Add this if you want them:
 Plugin 'honza/vim-snippets'
 
+" Show autocomplete automatically
+Bundle 'Valloric/YouCompleteMe'
+
+" Typescript syntax highlighting and indentation
+Plugin 'leafgarland/typescript-vim'
+
+" Awesome typescript features, requires Typescript npm module to be installed
+" See the help for more info.
+Bundle 'Shougo/vimproc.vim'
+Bundle 'Quramy/tsuquyomi'
+
 " This plugin allows for blocks of code to be wrapped in characters,
 " tags and more: https://github.com/tpope/vim-surround
 Bundle "tpope/vim-surround"
@@ -197,6 +208,11 @@ filetype plugin indent on   " required!
 
 " Ultisnips
 set runtimepath+=~/.vim/bundle/UltiSnips
+
+" UltiSnips triggers
+let g:UltiSnipsExpandTrigger = '<C-j>'
+let g:UltiSnipsJumpForwardTrigger = '<C-j>'
+let g:UltiSnipsJumpBackwardTrigger = '<C-k>'
 
 " Ctrlp root markers
 let g:ctrlp_root_markers = ['.ctrlp']
