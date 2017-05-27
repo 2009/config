@@ -11,6 +11,7 @@ echo "Creating link files"
 ln -sn $HOME/config/termite   $HOME/.config/termite
 ln -sn $HOME/config/awesome   $HOME/.config/awesome
 ln -sn $HOME/config/zshrc     $HOME/.zshrc
+ln -sn $HOME/config/zprofile  $HOME/.zprofile
 ln -sn $HOME/config/oh-my-zsh $HOME/.oh-my-zsh
 ln -sn $HOME/config/vim       $HOME/.vim
 ln -sn $HOME/config/vimrc     $HOME/.vimrc
