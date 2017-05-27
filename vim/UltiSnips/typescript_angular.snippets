@@ -1,61 +1,61 @@
 snippet ng2c "Angular 2 component" b
-	import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
-	@Component({
-		moduleId: module.id,
-		selector: '${1:#:selector}',
-		templateUrl: '${2:#:name}.component.html'
-	})
-	export class ${1:#:ComponentName}Component implements OnInit {
-		constructor() { }
+@Component({
+	moduleId: module.id,
+	selector: '${3:selector}',
+	templateUrl: '${2:name}.component.html'
+})
+export class ${1:ComponentName}Component implements OnInit {
+	constructor() { }
 
-		ngOnInit() { }
-		${0}
-	}
+	ngOnInit() { }
+	${0}
+}
 endsnippet
 
 snippet ng2s "Angular 2 service" b
 import { Injectable } from '@angular/core';
 
-	@Injectable()
-	export class ${1:#:ServiceName}Service {
-		${0}
-		constructor() { }
+@Injectable()
+export class ${1:ServiceName}Service {
+	${0}
+	constructor() { }
 
-	}
+}
 endsnippet
 
 snippet ng2p "Angular 2 pipe" b
-	import { Pipe, PipeTransform } from '@angular/core';
+import { Pipe, PipeTransform } from '@angular/core';
 
-	@Pipe({
-		name: '${name}'
-	})
+@Pipe({
+	name: '${2:name}'
+})
 
-	export class ${1:#:PipeName}Pipe implements PipeTransform {
-		transform(value: any, args: any[]): any {
-			${0}
-		}
+export class ${1:PipeName}Pipe implements PipeTransform {
+	transform(value: any, args: any[]): any {
+		${0}
 	}
+}
 endsnippet
 
 snippet ng2routes "Angular 2 routes definition"
-	@Routes([
-		{ path: '/${1:#:path}', component: ${2:#:Component} }${0}
-	])
+@Routes([
+	{ path: '/${1:path}', component: ${2:Component} }${0}
+])
 endsnippet
 
 snippet ng2rp "Angular 2 route path"
-	{ path: '/${1:#:path}', component: ${2:#:Component} }${0}
+{ path: '/${1:path}', component: ${2:Component} }${0}
 endsnippet
 
 snippet ng2httpg "Angular 2 Http Get"
-	return this.http.get('${1:#:url}')
+return this.http.get('${1:url}')
 	.map((res: Response) => res.json()${0});
 endsnippet
 
 snippet ng2sub "Angular 2 Observable subscribe"
-	this.${1:#:service}.${2:#:function}
-		.subscribe(${3:#:arg} => this.${4:#:property} = ${5:#:arg});
-	${0}
+this.${1:service}.${2:function}
+	.subscribe(${3:arg} => this.${4:property} = ${5:arg});
+${0}
 endsnippet
