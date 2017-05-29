@@ -32,7 +32,7 @@ COMPLETION_WAITING_DOTS="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git colored-man history)
+plugins=(bower gem git lol npm pip rails systemd taskwarrior colored-man history)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -100,22 +100,8 @@ fi
 export EDITOR=vim
 export BROWSER=firefox
 
-#alias ls="ls++"
-
-# Git alias
-alias gst="git status"
-alias ga="git add"
-alias gc="git commit"
-
-# Yaourt
-alias yu="yaourt -Syyu $1"
-alias ys="yaourt -S $1"
-alias yss="yaourt -Ss $1"
-alias yqs="yaourt -Qs $1"
-alias yrm="yaourt -Rns $1"
-
-# Copy file text to clipboard
-alias clip="xclip -sel clip < $1"
+# Aliases
+source $HOME/config/zsh/aliases
 
 # Show ponysay fortune
 fortune -a $ZSH/plugins/chucknorris/fortunes all | ponysay
