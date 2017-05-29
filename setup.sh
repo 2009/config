@@ -29,10 +29,6 @@ function command_installed {
   command -v $1 >/dev/null 2>&1 || { echo "Please install $1 and rerun. Aborting." >&2; exit 1; }
 }
 
-command_installed make
-cd $HOME/config/vim/bundle/vimproc.vim
-make
-
 command_installed cmake
 command_installed python3
 cd $HOME/config/vim/bundle/YouCompleteMe

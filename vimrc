@@ -172,13 +172,12 @@ Plugin 'honza/vim-snippets'
 " Show autocomplete automatically
 Bundle 'Valloric/YouCompleteMe'
 
-" Typescript syntax highlighting and indentation
-Plugin 'leafgarland/typescript-vim'
-
 " Awesome typescript features, requires Typescript npm module to be installed
 " See the help for more info.
-Bundle 'Shougo/vimproc.vim'
 Bundle 'Quramy/tsuquyomi'
+
+" Typescript syntax highlighting and indentation
+Plugin 'leafgarland/typescript-vim'
 
 " This plugin allows for blocks of code to be wrapped in characters,
 " tags and more: https://github.com/tpope/vim-surround
