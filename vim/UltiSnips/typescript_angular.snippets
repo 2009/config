@@ -2,7 +2,6 @@ snippet ng2c "Angular 2 component" b
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-	moduleId: module.id,
 	selector: '${3:selector}',
 	templateUrl: '${2:name}.component.html'
 })
@@ -11,6 +10,18 @@ export class ${1:ComponentName}Component implements OnInit {
 
 	ngOnInit() { }
 	${0}
+}
+endsnippet
+
+snippet ng2d "Angular 2 directive" b
+import { Directive, ElementRef } from '@angular/core';
+
+@Directive({
+	selector: '${2:selector}'
+})
+export class ${1:DirectiveName}Directive {
+	constructor(el: ElementRef) {${0}}
+
 }
 endsnippet
 
