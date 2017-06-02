@@ -3,6 +3,7 @@
 #
 # Authors:
 #   Sorin Ionescu <sorin.ionescu@gmail.com>
+#   2009 <2009@space.computer>
 #
 
 # Return if requirements are not found.

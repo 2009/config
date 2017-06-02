@@ -32,7 +32,34 @@ COMPLETION_WAITING_DOTS="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git colored-man history)
+plugins=(
+
+  # Additiona functionality
+  fasd colored-man
+
+  # (fun) magnet_to_torrent <magnet_link>
+  # converts a magnet link to torrent file.
+  torrent
+
+  copyfile  # (fun) copy file contents to the clipboard
+  copydir   # (fun) copy current directory to the clipboard
+
+  # Enable command not found suggestions
+  # archlinux requires pkfile to be installed and you must run
+  # 'sudo pkgfile --update' to populate the inital list.
+  command-not-found
+
+  # Autocomplete
+  bower docker docker-compose gem taskwarrior pip ng
+  rvm # w/ aliases: rubies, gemsets
+
+  # Aliases
+  git history
+  lol      # funny aliases
+  thefuck  # thefuck init, alias: [Esc] [Esc] or fuck
+  rake     # rake: allows square brackets, brake: bundle exec rake
+  rails    # bunch of aliases and smart rails/rake command (may conflict with rake plugin)
+)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -98,24 +125,13 @@ if [[ -n ${terminfo[smkx]} ]] && [[ -n ${terminfo[rmkx]} ]]; then
 fi
 
 export EDITOR=vim
-export BROWSER=firefox
+export BROWSER=chromium
+export XIVIEWER=feh
 
-#alias ls="ls++"
-
-# Git alias
-alias gst="git status"
-alias ga="git add"
-alias gc="git commit"
-
-# Yaourt
-alias yu="yaourt -Syyu $1"
-alias ys="yaourt -S $1"
-alias yss="yaourt -Ss $1"
-alias yqs="yaourt -Qs $1"
-alias yrm="yaourt -Rns $1"
-
-# Copy file text to clipboard
-alias clip="xclip -sel clip < $1"
+# Aliases
+for file in $HOME/config/zsh/aliases/*.zsh; do
+  source "$file"
+done
 
 # Show ponysay fortune
 fortune -a $ZSH/plugins/chucknorris/fortunes all | ponysay
