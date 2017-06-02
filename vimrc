@@ -394,6 +394,7 @@ hi CursorLine guibg=#000000 ctermbg=0 gui=none
 "hi SignColumn guibg=#333333 ctermbg=235
 
 " ================ Statusbar ========================
+"
 set laststatus=2 " Always show the status line
 let g:airline#extensions#tabline#enabled = 1 " Enable buffer line
 let g:airline_powerline_fonts = 1 " Enable powerline symbols
@@ -404,3 +405,10 @@ if !exists('g:airline_symbols')
 endif
 let g:airline_symbols.linenr = ''
 let g:airline_symbols.maxlinenr = ''
+
+" =========== Project Specific .vimrc =================
+" Allows for adding a .vimrc in a directory that will be started
+" when running vim from that directory.
+set exrc
+set secure
+
