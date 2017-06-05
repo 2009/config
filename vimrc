@@ -220,6 +220,10 @@ let g:ctrlp_root_markers = ['.ctrlp']
 let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git\|bower_components\|tmp\|dist'
 let g:ctrlp_show_hidden = 1
 
+" Typescript (tsuquyomi)
+let g:tsuquyomi_single_quote_import = 1
+let g:tsuquyomi_shortest_import_path = 1
+
 " ==================================================
 " Key Mappings
 " ==================================================
