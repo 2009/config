@@ -161,7 +161,7 @@ Plugin 'ajh17/Spacegray.vim'
 Plugin 'sjl/gundo.vim'
 
 " A Plugin to manage snippets located under ~/.vim/snippets
-" Bundle garbas/vim-snipmate
+" Plugin garbas/vim-snipmate
 
 " Track the engine.
 Plugin 'SirVer/ultisnips'
@@ -170,33 +170,31 @@ Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 
 " Show autocomplete automatically
-Bundle 'Valloric/YouCompleteMe'
+Plugin 'Valloric/YouCompleteMe'
 
 " Awesome typescript features, requires Typescript npm module to be installed
 " See the help for more info.
-Bundle 'Quramy/tsuquyomi'
+Plugin 'Quramy/tsuquyomi'
 
 " Typescript syntax highlighting and indentation
 Plugin 'leafgarland/typescript-vim'
 
 " This plugin allows for blocks of code to be wrapped in characters,
 " tags and more: https://github.com/tpope/vim-surround
-Bundle "tpope/vim-surround"
+Plugin "tpope/vim-surround"
 
 " This plugin allows a scratch buffer to exist which can be used to write
 " down notes without effecting other bueffers: https://github.com/mtth/scratch.vim
 " use :Scratch or gs to open up the scratch buffer
-Bundle "mtth/scratch.vim"
+Plugin "mtth/scratch.vim"
 
-"Bundle 'altercation/vim-colors-solarized'
-"Bundle 'tpope/vim-fugitive'
-"Bundle 'Lokaltog/vim-easymotion'
-"Bundle 'tpope/vim-rails.git'
-"Bundle 'scrooloose/nerdcommenter'
-"Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
-"Bundle 'LustyJuggler'
-
-"Bundle 'git://git.wincent.com/command-t.git'
+"Plugin 'altercation/vim-colors-solarized'
+"Plugin 'tpope/vim-fugitive'
+"Plugin 'Lokaltog/vim-easymotion'
+"Plugin 'tpope/vim-rails.git'
+"Plugin 'scrooloose/nerdcommenter'
+"Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
+"Plugin 'LustyJuggler'
 
 call vundle#end()           " required!
 filetype plugin indent on   " required!
