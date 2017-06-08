@@ -181,12 +181,12 @@ Plugin 'leafgarland/typescript-vim'
 
 " This plugin allows for blocks of code to be wrapped in characters,
 " tags and more: https://github.com/tpope/vim-surround
-Plugin "tpope/vim-surround"
+Plugin 'tpope/vim-surround'
 
 " This plugin allows a scratch buffer to exist which can be used to write
 " down notes without effecting other bueffers: https://github.com/mtth/scratch.vim
 " use :Scratch or gs to open up the scratch buffer
-Plugin "mtth/scratch.vim"
+Plugin 'mtth/scratch.vim'
 
 "Plugin 'altercation/vim-colors-solarized'
 "Plugin 'tpope/vim-fugitive'
