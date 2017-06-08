@@ -1,3 +1,15 @@
+snippet ng2m "Angular 2 module"
+import { NgModule } from '@angular/core';
+
+@NgModule({
+	declarations: [${2}],
+	imports: [${3}],
+	exports: [${4}],
+	providers: [${5}]
+})
+export class ${1:App}Module {}
+endsnippet
+
 snippet ng2c "Angular 2 component" b
 import { Component, OnInit } from '@angular/core';
 
