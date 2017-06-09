@@ -29,7 +29,7 @@ alias fd='find . -type d -name'
 alias ff='find . -type f -name'
 
 alias h='history'
-alias hgrep="fc -El 0 | grep"
+alias hgrep="fc -El 0 | grep"   # search commandline history
 
 alias rm='rm -i'
 alias cp='cp -i'
