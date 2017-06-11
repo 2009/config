@@ -98,8 +98,11 @@ class movieautoname(Command):
 
     Renames folder automatically based on title.
     """
+    # TODO refactor the code so it is cleaner
+    # TODO Check if the filename exists and print an error
+    # TODO Update to allow handling TV show (episode, subber etc.)
 
-    quality_attributes = ["1080p", "1080", "720p", "720", "480p", "480", "xvid", "1080i"]
+    quality_attributes = ["1080p", "1080", "720p", "720", "480p", "480", "xvid", "1080i", "web", "hdtv", "bray"]
     format_string = "%t (%y)"
 
     def execute(self):
@@ -176,7 +179,8 @@ class movieautoname(Command):
                 if len(elem) == 4 and elem[0:2] in ["19", "20"] and elem[2:4].isdigit():
                     fields['year'] = elem
 
-                    # Everything after the year is considered extra
+                # Everything after the year or quality is considered extra
+                if fields['quality'] or fields['year']:
                     for j in range(idx + 1, len(elems) - 1):
                         if elems[j] in self.quality_attributes:
                             fields['quality'] = elems[j]
