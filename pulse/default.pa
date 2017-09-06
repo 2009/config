@@ -1,0 +1,6 @@
+#!/usr/bin/pulseaudio -nF
+.include /etc/pulse/default.pa
+
+# Automatically switch  to device when it gets connected
+# e.g. headphones
+load-module module-switch-on-connect
