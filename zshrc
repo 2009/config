@@ -135,7 +135,7 @@ for file in $HOME/config/zsh/aliases/*.zsh; do
 done
 
 # Show ponysay fortune
-fortune -a $ZSH/plugins/chucknorris/fortunes all | cowsay -f "$(ls /usr/share/cows/ | sort -R | head -1)" | lolcat
+fortune -a $ZSH/plugins/chucknorris/fortunes all | cowsay -n -f "$(ls /usr/share/cows/ | sort -R | head -1)" | lolcat
 
 # Don't load global ranger config as we set all variables in config/ranger/rc.conf
 export RANGER_LOAD_DEFAULT_RC=FALSE
