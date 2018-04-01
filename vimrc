@@ -1,7 +1,7 @@
 " ==================================================
 " Shortcut Documentation
 " ==================================================
-" " ,    - Leader
+" ,    - Leader
 " ;    - Substitute for :
 " jj   - Esc
 "
@@ -179,6 +179,10 @@ Plugin 'Quramy/tsuquyomi'
 " Typescript syntax highlighting and indentation
 Plugin 'leafgarland/typescript-vim'
 
+" JSX and Javascript indentation and highlighting
+"Plugin 'pangloss/vim-javascript'
+Plugin 'mxw/vim-jsx'
+
 " This plugin allows for blocks of code to be wrapped in characters,
 " tags and more: https://github.com/tpope/vim-surround
 Plugin 'tpope/vim-surround'
@@ -187,6 +191,10 @@ Plugin 'tpope/vim-surround'
 " down notes without effecting other bueffers: https://github.com/mtth/scratch.vim
 " use :Scratch or gs to open up the scratch buffer
 Plugin 'mtth/scratch.vim'
+
+" CSV support
+" https://github.com/chrisbra/csv.vim
+Plugin 'chrisbra/csv.vim'
 
 "Plugin 'altercation/vim-colors-solarized'
 "Plugin 'tpope/vim-fugitive'
@@ -269,6 +277,10 @@ set pastetoggle=<F2>
 " NerdTree
 map <C-n> :NERDTreeToggle<CR>
 
+" Convert html to haml using the html2haml ruby gem
+nmap <leader>h :%!html2haml --erb --ruby19-attributes 2> /dev/null<CR>:set ft=haml<CR>
+vmap <leader>h :!html2haml --erb --ruby19-attributes 2> /dev/null<CR>
+
 " ================ Write non-sudo files ==============
 
 " Allows saving files not opened with sudo
@@ -301,7 +313,8 @@ syntax on
 
 " Set the terminal to use z-shell
 " (use -l since the interactive mode always fails)
-set shell=/bin/zsh\ -l
+"set shell=/bin/zsh\ -l
+set shell=/bin/zsh
 
 " ================ Search Settings =================
 
