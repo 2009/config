@@ -8,7 +8,7 @@ alias clip="xclip -sel clip < $1"
 alias zshrc='$EDITOR ~/.zshrc' # Quick access to the ~/.zshrc file
 
 # Servers don't seem to like termite, so tell them it is xterm
-alias ssh='TERM=xterm ssh'
+alias ssht='TERM=xterm ssh'
 
 # ls, the common ones I use a lot shortened for rapid fire usage
 alias l='ls -lFh'     #size,show type,human readable

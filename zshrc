@@ -76,11 +76,13 @@ export PATH=/usr/local/share/npm/bin:$PATH
 # Fix for java font rendering in Arch Linux
 export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on'
 
+# Android SDK
+export ANDROID_HOME=/opt/android-sdk
+export PATH=$PATH:$ANDROID_HOME/platform-tools:$ANDROID_HOME/tools
+export JAVA_HOME=/usr/lib/jvm/java-8-openjdk
+
 # RVM
-# Load rvm
 source ~/.rvm/scripts/rvm
-# Ignore --user-install in /etc/gemrc, this is Arch specific
-#export rvm_ignore_gemrc_issues=1
 
 # Disable corrections
 unsetopt correct_all
