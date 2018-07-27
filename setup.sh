@@ -1,3 +1,5 @@
+#!/bin/bash
+
 cd $HOME/config
 
 echo "Fetching git submodules"
@@ -6,7 +8,8 @@ git submodule update --init --recursive
 
 echo "Creating link files"
 
-[ -d $HOME/.config ] || mkdir $HOME/.config
+mkdir -p $HOME/.config
+mkdir -p $HOME/.config/pulse
 
 ln -sn $HOME/config/termite          $HOME/.config/termite
 ln -sn $HOME/config/awesome          $HOME/.config/awesome
