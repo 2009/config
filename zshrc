@@ -127,7 +127,16 @@ if [[ -n ${terminfo[smkx]} ]] && [[ -n ${terminfo[rmkx]} ]]; then
   zle -N zle-line-finish
 fi
 
-export EDITOR=vim
+
+# Use nvim if it's available
+if [ -x "$(command -v nvim)" ]; then
+  export EDITOR=nvim
+  alias vim=nvim
+  alias oldvim=\vim
+else
+  export EDITOR=vim
+fi
+
 export BROWSER=chromium
 export XIVIEWER=feh
 
