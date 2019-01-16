@@ -6,6 +6,10 @@ echo "Fetching git submodules"
 
 git submodule update --init --recursive
 
+echo "Setup global gitignore"
+
+git config --global core.excludesfile $HOME/config/gitignore_global
+
 echo "Creating link files"
 
 mkdir -p $HOME/.config
