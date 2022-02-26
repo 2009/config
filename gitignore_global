@@ -45,3 +45,4 @@ Thumbs.db
 #######################
 Gemfile.local
 Gemfile.local.lock
+.env.dev
