@@ -100,7 +100,8 @@ This function should only modify configuration layer settings."
                       ;;version-control-diff-tool 'git-gutter)
                       version-control-diff-tool 'diff-hl)
      (treemacs :variables
-               treemacs-no-png-images t)
+               ;; may need to install fonts with M-x all-the-icons-install-fonts
+               treemacs-use-all-the-icons-theme t)
      )
 
    ;; List of additional packages that will be installed without being
