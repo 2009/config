@@ -81,7 +81,8 @@ This function should only modify configuration layer settings."
           org-enable-org-journal-support t
           org-journal-enable-agenda-integration t
           org-journal-dir "~/org/journal/"
-          org-journal-file-format "%Y-%m-%d")
+          org-journal-file-format "%Y-%m-%d"
+          org-journal-carryover-items "")
           ;;org-journal-date-prefix "#+TITLE: "
           ;;org-journal-date-format "%A, %B %d %Y"
           ;;org-journal-time-prefix "* "
@@ -643,6 +644,7 @@ before packages are loaded."
           (goto-char (point-min))
           (insert-file-contents template-file)))))
 
+  ;; Inserts journal template after adding entry using ,jj
   (add-hook 'org-journal-after-entry-create-hook #'org-custom/insert-journal-template)
 
   ;; Start in insert mode after org-capture
@@ -650,9 +652,9 @@ before packages are loaded."
 
   ;; org-journal custom capture templates
   (defun org-journal-find-location ()
-    ;; Open today's journal, but specify a non-nil prefix argument in order to
-    ;; inhibit inserting the heading; org-capture will insert the heading.
+    ;; Open today's journal and insert template when new file
     (org-journal-new-entry t)
+    (org-custom/insert-journal-template)
     (unless (eq org-journal-file-type 'daily)
       (org-narrow-to-subtree))
     (goto-char (point-max)))
@@ -702,7 +704,9 @@ before packages are loaded."
     (org-set-property "TABLE_EXPORT_FILE" (concat "csv/in/" (file-name-sans-extension (buffer-name)) ".csv"))
     (forward-line 1)
     (org-table-export)
-    (shell-command (concat "~/dev/scripts/harvest/org-to-harvest.sh ~/org/journal/csv/in/" (file-name-sans-extension (buffer-name)) ".csv")))
+    (shell-command (concat "~/dev/scripts/harvest/org-to-harvest.sh ~/org/journal/csv/in/" " " (file-name-sans-extension (buffer-name)) ".csv"))
+    (org-todo "DONE")
+    (save-buffer))
 
   ;;(advice-add 'inf-ruby-console-auto :before #'rvm-activate-corresponding-ruby)
 
@@ -740,15 +744,15 @@ This function is called at the very end of Spacemacs initialization."
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(evil-want-Y-yank-to-eol nil)
- '(org-agenda-files '("/Users/justin.endacott/org/journal/2022-02-25"))
+ '(org-agenda-files '("/Users/justin.endacott/org/journal/2022-06-15"))
  '(package-selected-packages
-   '(tern org-journal tide typescript-mode import-js grizzl company add-node-modules-path yaml-mode xterm-color ws-butler writeroom-mode winum which-key web-mode web-beautify vterm volatile-highlights vi-tilde-fringe uuidgen use-package undo-tree treemacs-projectile treemacs-persp treemacs-magit treemacs-icons-dired treemacs-evil toc-org terminal-here tagedit symon symbol-overlay string-inflection sql-indent spaceline-all-the-icons smeargle slim-mode shell-pop seeing-is-believing scss-mode sass-mode rvm ruby-tools ruby-test-mode ruby-refactor ruby-hash-syntax rubocopfmt rubocop rspec-mode robe rjsx-mode restart-emacs rbenv rake rainbow-delimiters pug-mode prettier-js popwin password-generator paradox overseer orgit org-superstar org-rich-yank org-projectile org-present org-pomodoro org-mime org-download org-cliplink org-brain open-junk-file nodejs-repl nameless multi-term move-text mmm-mode minitest markdown-toc magit-svn magit-section magit-gitflow macrostep lorem-ipsum livid-mode link-hint json-navigator json-mode js2-refactor js-doc indent-guide impatient-mode hybrid-mode hungry-delete hl-todo highlight-parentheses highlight-numbers highlight-indentation helm-xref helm-themes helm-swoop helm-purpose helm-projectile helm-org-rifle helm-org helm-mode-manager helm-make helm-ls-git helm-gitignore helm-git-grep helm-flx helm-descbinds helm-css-scss helm-ag google-translate golden-ratio godoctor go-tag go-rename go-impl go-guru go-gen-test go-fill-struct go-eldoc gnuplot gitignore-templates gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link gh-md font-lock+ flycheck-pos-tip flycheck-package flycheck-elsa flx-ido fancy-battery eyebrowse expand-region evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-textobj-line evil-surround evil-org evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-magit evil-lisp-state evil-lion evil-indent-plus evil-iedit-state evil-goggles evil-exchange evil-escape evil-ediff evil-cleverparens evil-args evil-anzu eval-sexp-fu eshell-z eshell-prompt-extras esh-help enh-ruby-mode emr emmet-mode elisp-slime-nav editorconfig dumb-jump dotenv-mode diminish diff-hl devdocs define-word csv-mode column-enforce-mode clean-aindent-mode chruby centered-cursor-mode bundler browse-at-remote auto-highlight-symbol auto-compile aggressive-indent ace-link ace-jump-helm-line)))
+   '(nginx-mode doom-modeline shrink-path treemacs-all-the-icons nix-mode helm-nixos-options nixos-options tern org-journal tide typescript-mode import-js grizzl company add-node-modules-path yaml-mode xterm-color ws-butler writeroom-mode winum which-key web-mode web-beautify vterm volatile-highlights vi-tilde-fringe uuidgen use-package undo-tree treemacs-projectile treemacs-persp treemacs-magit treemacs-icons-dired treemacs-evil toc-org terminal-here tagedit symon symbol-overlay string-inflection sql-indent spaceline-all-the-icons smeargle slim-mode shell-pop seeing-is-believing scss-mode sass-mode rvm ruby-tools ruby-test-mode ruby-refactor ruby-hash-syntax rubocopfmt rubocop rspec-mode robe rjsx-mode restart-emacs rbenv rake rainbow-delimiters pug-mode prettier-js popwin password-generator paradox overseer orgit org-superstar org-rich-yank org-projectile org-present org-pomodoro org-mime org-download org-cliplink org-brain open-junk-file nodejs-repl nameless multi-term move-text mmm-mode minitest markdown-toc magit-svn magit-section magit-gitflow macrostep lorem-ipsum livid-mode link-hint json-navigator json-mode js2-refactor js-doc indent-guide impatient-mode hybrid-mode hungry-delete hl-todo highlight-parentheses highlight-numbers highlight-indentation helm-xref helm-themes helm-swoop helm-purpose helm-projectile helm-org-rifle helm-org helm-mode-manager helm-make helm-ls-git helm-gitignore helm-git-grep helm-flx helm-descbinds helm-css-scss helm-ag google-translate golden-ratio godoctor go-tag go-rename go-impl go-guru go-gen-test go-fill-struct go-eldoc gnuplot gitignore-templates gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link gh-md font-lock+ flycheck-pos-tip flycheck-package flycheck-elsa flx-ido fancy-battery eyebrowse expand-region evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-textobj-line evil-surround evil-org evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-magit evil-lisp-state evil-lion evil-indent-plus evil-iedit-state evil-goggles evil-exchange evil-escape evil-ediff evil-cleverparens evil-args evil-anzu eval-sexp-fu eshell-z eshell-prompt-extras esh-help enh-ruby-mode emr emmet-mode elisp-slime-nav editorconfig dumb-jump dotenv-mode diminish diff-hl devdocs define-word csv-mode column-enforce-mode clean-aindent-mode chruby centered-cursor-mode bundler browse-at-remote auto-highlight-symbol auto-compile aggressive-indent ace-link ace-jump-helm-line)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- )
+ '(highlight-parentheses-highlight ((nil (:weight ultra-bold))) t))
 )
 
 
