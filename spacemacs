@@ -276,7 +276,8 @@ It should only modify the values of Spacemacs settings."
    ;; refer to the DOCUMENTATION.org for more info on how to create your own
    ;; spaceline theme. Value can be a symbol or list with additional properties.
    ;; (default '(spacemacs :separator wave :separator-scale 1.5))
-   dotspacemacs-mode-line-theme '(spacemacs :separator wave :separator-scale 1.5)
+   ;;dotspacemacs-mode-line-theme '(spacemacs :separator slant :separator-scale 1.0)
+   dotspacemacs-mode-line-theme '(doom :separator cup)
 
    ;; If non-nil the cursor color matches the state color in GUI Emacs.
    ;; (default t)
@@ -590,6 +591,15 @@ This function is called at the very end of Spacemacs startup, after layer
 configuration.
 Put your configuration code here, except for variables that should be set
 before packages are loaded."
+
+  ;; TODO enable which-function-mode
+  ;; TODO try eyebrowse for todo and daily log
+  ;; TODO How do we get this working?
+  (setq doom-modeline-github t)
+  (setq doom-modeline-env-version nil)
+  (setq doom-modeline-buffer-encoding nil)
+  ;; TODO errors don't show for flycheck, fix then remove this line to use simple version
+  (setq doom-modeline-checker-simple-format nil)
 
   (setq-default typescript-indent-level 2)
 
