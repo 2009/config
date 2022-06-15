@@ -32,6 +32,7 @@ This function should only modify configuration layer settings."
 
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers '(
+     nginx
      (typescript :variables
                 typescript-fmt-on-save t
                 typescript-fmt-tool 'prettier
