@@ -57,6 +57,9 @@ This function should only modify configuration layer settings."
            ruby-test-runner 'rspec)
      yaml
      html
+     (elm :variables
+          elm-format-on-save t
+          elm-sort-imports-on-save t)
      ;; TODO try this out could be cool
      ;;slack
      ;; ----------------------------------------------------------------
