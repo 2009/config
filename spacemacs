@@ -629,6 +629,22 @@ before packages are loaded."
     (eslint-fix-file)
     (revert-buffer t t))
 
+
+  ;; Convert PX to REM
+  (defun css-rem-recover
+      ()
+    (interactive)
+    (let ((text (thing-at-point 'sexp))
+          (location (bounds-of-thing-at-point 'sexp)))
+      (cond
+       ((s-ends-with? "rem" text)
+        (delete-region (car location) (cdr location))
+        (message "using font-size: %d", 16)
+        (insert (format "%dpx" (* 16 (string-to-number text)))))
+       ((s-ends-with? "px" text)
+        (delete-region (car location) (cdr location))
+        (insert (format "%.3frem" (/ (float (string-to-number text)) 16)))))))
+
   ;;(add-hook 'js2-mode-hook
   ;;  (lambda ()
   ;;    (add-hook 'after-save-hook #'eslint-fix-file-and-revert)))
