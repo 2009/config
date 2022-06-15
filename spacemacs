@@ -58,6 +58,7 @@ This function should only modify configuration layer settings."
            ruby-test-runner 'rspec)
      yaml
      html
+     nixos
      (elm :variables
           elm-format-on-save t
           elm-sort-imports-on-save t)
